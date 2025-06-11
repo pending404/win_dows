@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can_va</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));
+            animation: glow 2s infinite alternate;
+        }
+        
+        h1 {
+            color: #00ffcc;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+        }
+        
+        p {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .id-display {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 18px;
+            border: 1px solid #00ffcc;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            min-width: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+            animation: pulse-green 2s infinite;
+        }
+        
+        .btn-telegram {
+            background: linear-gradient(45deg, #0088cc, #00aced);
+            color: white;
+            box-shadow: 0 0 15px rgba(0, 136, 204, 0.5);
+            animation: pulse-blue 2s infinite;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px;
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        
+        .instructions {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 25px;
+            text-align: center;
+        }
+        
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
+            }
+            to {
+                filter: drop-shadow(0 0 20px rgba(0, 255, 255, 1));
+            }
+        }
+        
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+            }
+        }
+        
+        @keyframes pulse-blue {
+            0% {
+                box-shadow: 0 0 15px rgba(0, 136, 204, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(0, 136, 204, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(0, 136, 204, 0.5);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <img src="canv-logo.svg" alt="Canva Pro Logo" class="logo">
+        <h1>Canva Pro Premium Access</h1>
+        
+        <div class="id-display" id="generatedId">
+            <!-- ID will be generated automatically -->
+        </div>
+        
+        <div class="instructions">
+            <p>Send screenshot of this page and payment proof on WhatsApp or Telegram to get instant activation</p>
+        </div>
+        
+        <div class="buttons">
+            <a href="https://wa.me/919401588779" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://t.me/Its_Maxado" class="btn btn-telegram">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Function to generate a random Canva Pro ID
+        function generateCanvaId() {
+            const prefixes = ['CANPRO', 'CVAPRO', 'DESIGN', 'CREATV', 'GRAPHX', 'MASTER'];
+            const suffix = Math.floor(100000 + Math.random() * 900000);
+            const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+            return `${randomPrefix}-${suffix}-PRO`;
+        }
+
+        // Generate ID when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const generatedId = generateCanvaId();
+            document.getElementById('generatedId').innerHTML = `
+                <strong>Your Canva Pro Activation ID:</strong><br>
+                <span style="color: #00ffcc; font-size: 22px;">${generatedId}</span><br><br>
+                <small>Lifetime validity | One-time use</small>
+            `;
+        });
+    </script>
+</body>
+</html>

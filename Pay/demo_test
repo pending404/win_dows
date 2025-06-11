@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Payment Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 800px; /* बढ़ा दिया गया */
+            animation: glowingBorder 1.5s infinite alternate;
+        }
+
+        @keyframes glowingBorder {
+            0% {
+                box-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00, 0 0 35px #00ff00;
+            }
+            100% {
+                box-shadow: 0 0 25px #ff00ff, 0 0 35px #ff00ff, 0 0 45px #ff00ff;
+            }
+        }
+
+        h1 {
+            color: #333;
+            font-size: 3.75rem; /* 50% बढ़ाया गया */
+        }
+
+        p {
+            font-size: 1.8rem; /* 50% बढ़ाया गया */
+            color: green;
+            margin-top: 15px;
+        }
+
+        /* For Mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+
+        /* For Desktop - Zoomed in View */
+        @media screen and (min-width: 1024px) {
+            .container {
+                transform: scale(1.5); /* Desktop पर 50% ज़ूम */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Demo Payment Test</h1>
+        <p>
+            Yeh sirf ek demo payment test hai taaki aap yeh check kar sakein ki hamari website ka payment gateway sahi tareeke se kaam kar raha hai ya nahi. 
+        </p>
+        <p>
+            Aapka payment Successful ho gya hai, iska matlab hamara payment system kaam kar raha hai.
+        </p>
+        <p>
+            Yeh payment sirf testing ke liye hai aur kisi bhi asli Transaction ke liye nahi hai.
+        </p>
+    </div>
+
+</body>
+</html>
